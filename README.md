@@ -4,9 +4,10 @@ Project used to explore Spark SQL.
 ## Overview
 
 This is a Spark project based on Scala using Maven.  Why Maven?  Because I do not want to burn time
-right now.  Most of the work done in this project is meant to follow along with the samles created in in the
-[Spark SQL Blog Articles](http://virtuslab.com/blog/spark-sql-hood-part-i/) which exaplain Spark SQL by
-examples and iclude the RDDs as part of the explanation.
+right now learning SBT.  Most of the work done in this project is meant to follow along with the samples created
+in the
+[Spark SQL Blog Articles](http://virtuslab.com/blog/spark-sql-hood-part-i/) which explain Spark SQL by
+examples and include the RDDs as part of the explanation.
 
 ## How I created the project
 
@@ -18,7 +19,7 @@ To create the shaded jar, which defaults to using a local context, do the follow
 
     mvn package
 
-To run the created shaded jar:
+To run the shaded jar:
 
     java -jar target/sql_hood-1.0-SNAPSHOT-shaded.jar
 
