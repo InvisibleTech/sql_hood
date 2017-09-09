@@ -1,22 +1,19 @@
 package org.sparkle
 
 import org.apache.spark.SparkConf
+import org.apache.spark.SparkContext
 import org.apache.spark.sql.SparkSession
 
-/**
- * @author ${user.name}
- */
 object App {
-
-  def foo(x : Array[String]) = x.foldLeft("")((a,b) => a + b)
-
   def main(args : Array[String]) {
-    println( "Hello World!" )
-    println("concat arguments = " + foo(args))
+    println("Running SparkSQL Internals" )
+    println("Using arguments " + args)
 
-    val conf = new SparkConf().setAppName("SparkSQL internals").setMaster("local[*]")
-    val session = SparkSession.builder.config(conf).getOrCreate()
-    import session.implicits._
+    val conf = new SparkConf().setAppName("SparkSQL Internals").setMaster("local[*]")
+    val sc = new SparkContext(conf)
+    val ss = SparkSession.builder.config(conf).getOrCreate()
+
+    SparkSQLDive.run(sc, ss)
   }
 
 }
